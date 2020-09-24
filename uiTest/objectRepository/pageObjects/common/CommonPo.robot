@@ -17,7 +17,8 @@ Open Browser To Login Page
 	...  Open the browser and navigates to the login page  ...
 	
     Open Browser      ${LOGIN URL}   ${BROWSER}
-    Set Window Size	    ${WINDOW_WIDTH}     ${WINDOW_HEIGHT}
+    #Set Window Size	    ${WINDOW_WIDTH}     ${WINDOW_HEIGHT} reemplace por Maximize Browser Window
+    Maximize Browser Window
     Set Selenium Timeout     ${SELENIUM_TIMEOUT}
     Element Should Be Visible [Arguments] ${loginPageLogo} ${SMALL_RETRY_COUNT}
     Set Log Level    DEBUG     

@@ -1,6 +1,6 @@
 *** Setting ***
 Resource   ../../../objectRepository/pageObjects/userManagement/LoginPo.robot
-Resource   ../../../objectRepository/pageObjects/userManagement/CreateCallPo.robot
+Resource   ../../../objectRepository/pageObjects/userManagement/DashboardPo.robot
 Resource   ../../../objectRepository/pageObjects/common/CommonPo.robot
 
 Library    SeleniumLibrary
@@ -32,7 +32,8 @@ Verificar que se haya creado creado la llamada exitosamente
 	...  Este test case verifica que pueda levantar el data spciker  ...
     [Tags]          Funcional
     Create Call
-    Sleep   1s
-    Element Should Be Visible       ${callCreatedSuccessfully}     ${SMALL_RETRY_COUNT}
+    Sleep   3s
+    #Element Should Be Visible       ${callCreatedSuccessfully}     ${SMALL_RETRY_COUNT}
+    Wait Until Element Is Visible   ${callCreatedSuccessfully}
     
     
