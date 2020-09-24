@@ -8,13 +8,6 @@ Library     SeleniumLibrary
 ${item}         1
 
 *** Keywords ***
-#Count Items Dropdown    [Arguments] ${itemsCustomers}     
-#    [Documentation]    
-#    ...  Cuenta los items que tiene el Dropdow  ...
-#    Wait Until Page Contains Element    ${itemsCustomers}
-#    ${countItemsCustomers}  Get Element Count   ${itemsCustomers}
-#    Return from keyword    ${countItemsCustomers}
-
 Get Random Item [Arguments] ${items}
     [Documentation]    
     ...  Cuenta los items que tiene el Dropdow y luego selecciona uno al azar  ...
