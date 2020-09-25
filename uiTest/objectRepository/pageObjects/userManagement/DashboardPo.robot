@@ -19,8 +19,9 @@ Create Call
     Select From Dropdown And Click Element Random [Arguments] ${selectHelper} ${itemsCustomers} ${SMALL_RETRY_COUNT}
     Sleep   2s
     Click Element [Arguments] ${btnNewVisitCreate} ${SMALL_RETRY_COUNT} 
-    
-    
+
+Enter The Call
+    Click Element [Arguments] ${enterTheCall} ${SMALL_RETRY_COUNT}
 
 
 

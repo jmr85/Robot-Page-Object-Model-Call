@@ -9,6 +9,8 @@ ${selectHelper}         //*[@id="demo-simple-select-helper"]
 ${itemsCustomers}       xpath=//*[@id="menu-"]/div/ul/li
 ${btnNewVisitCreate}              //button[@id='btnNewVisitCreate']/span
 ${callCreatedSuccessfully}                     xpath=//div[@id='kt_content']/div/div/div/div/div/div[2]/div/div/b
+# Boton entrar a la llamada
+${enterTheCall}         xpath=//*[@id="btnAgendaEnterCall"]
 # iconos de status de llamadas
 ${iconCallNotInitiated}
 ${iconCallInitiated}    Get Element Attribute   css:fill: orange
