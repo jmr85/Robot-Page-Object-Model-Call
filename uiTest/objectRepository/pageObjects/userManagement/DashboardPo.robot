@@ -16,7 +16,7 @@ Create Call
     #${item}    Get Random Item [Arguments] ${itemsCustomers} ${SMALL_RETRY_COUNT}
     #Log     Valor item: ${item}  DEBUG
     #Select From Dropdown [Arguments] ${selectHelper} ${item} ${SMALL_RETRY_COUNT}
-    Select From Dropdown Random [Arguments] ${selectHelper} ${SMALL_RETRY_COUNT}
+    Select From Dropdown And Click Element Random [Arguments] ${selectHelper} ${itemsCustomers} ${SMALL_RETRY_COUNT}
     Sleep   2s
     Click Element [Arguments] ${btnNewVisitCreate} ${SMALL_RETRY_COUNT} 
     

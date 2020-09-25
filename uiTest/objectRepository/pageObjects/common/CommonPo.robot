@@ -151,13 +151,13 @@ Set Text [Arguments] ${textBoxLocator} ${text} ${retryScale}
 
 Get Random Item [Arguments] ${items} ${retryScale}
     [Documentation]    
-    ...  24-09-20 Cuenta los items que tiene el Dropdow y luego selecciona uno al azar  ...
+    ...  25-09-20 Cuenta los items que tiene el Dropdow y devuelve un numero al azar  ...
 
     Wait Until Page Contains Element    ${items}
     ${countItemsCustomers}=     Get Element Count   ${items}
     Log         ${countItemsCustomers} 
     ${random}   Set Variable    0
-    ${random}=  Evaluate    random.randint(1, ${countItemsCustomers}) 
+    ${random}   Evaluate    random.randint(1, ${countItemsCustomers}) 
     Return from keyword     ${random}
 
 Select From Dropdown [Arguments] ${dropdownLocator} ${text} ${retryScale}
@@ -168,13 +168,13 @@ Select From Dropdown [Arguments] ${dropdownLocator} ${text} ${retryScale}
     ${optionLocator}    Get Option Locator By Name From Dropdown [Arguments] ${text}
     Click Element [Arguments] ${optionLocator} ${retryScale}
 
-Select From Dropdown Random [Arguments] ${dropdownLocator} ${retryScale}
+Select From Dropdown And Click Element Random [Arguments] ${dropdownLocator} ${itemsLocator} ${retryScale}
     [Documentation]        
-	...  24-09-20 Select an option value from a dropdown  ...
+	...  25-09-20 Hace click en el combo select ${dropdownLocator} y luego selecciona al azar un item ${itemsLocator} ...
 
     Click Element [Arguments] ${dropdownLocator} ${retryScale}
     Sleep   3s
-    ${item}    Get Random Item [Arguments] ${itemsCustomers} ${retryScale}
+    ${item}    Get Random Item [Arguments] ${itemsLocator} ${retryScale}
     ${optionLocator}    Get Option Locator By Name From Dropdown [Arguments] ${item}
     Click Element [Arguments] ${optionLocator} ${retryScale}    
     
