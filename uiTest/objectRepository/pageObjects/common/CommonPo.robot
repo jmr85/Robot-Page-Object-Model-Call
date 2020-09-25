@@ -154,7 +154,6 @@ Get Random Item [Arguments] ${items} ${retryScale}
     ...  24-09-20 Cuenta los items que tiene el Dropdow y luego selecciona uno al azar  ...
 
     Wait Until Page Contains Element    ${items}
-    Page Should Contain Element         ${items}        limit=none
     ${countItemsCustomers}=     Get Element Count   ${items}
     Log         ${countItemsCustomers} 
     ${random}   Set Variable    0
