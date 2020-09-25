@@ -36,15 +36,27 @@ Verificar que se vea el texto Visitas
     
     Element Should Contain      xpath=/html/body/div[1]/div[4]/div/div/div/div/div[1]/div[1]/h3  visitas    ignore_case=true
 
-# Verificar que se haya creado creado la llamada exitosamente
-#     [Documentation]
-# 	...  Este test case verifica que pueda levantar el data spciker  ...
-#     [Tags]          Funcional
-#     Create Call
-#     Sleep   3s
-#     #Element Should Be Visible       ${callCreatedSuccessfully}     ${SMALL_RETRY_COUNT}
-#     Wait Until Element Is Visible   ${callCreatedSuccessfully}
-    
+Verificar que se haya creado creado la llamada exitosamente
+    [Documentation]
+	...  Este test case verifica que pueda levantar el data spciker  ...
+    [Tags]          Funcional
+    Create Call
+    Sleep   3s
+    #Element Should Be Visible       ${callCreatedSuccessfully}     ${SMALL_RETRY_COUNT}
+    Wait Until Element Is Visible   ${callCreatedSuccessfully}
+Verificar el codigo de llamada creada
+    ${ValorCodeCall}   Get Text   ${callCreatedSuccessfully}
+    Log        El texto copiado es: ${ValorCodeCall}    console=yes
+
+Verificar textos de cada Item llamada agendada
+    Sleep    3s
+    Wait Until Element Is Visible   ${kt-widget4__text}
+    @{nombresDeContenedores}    Get WebElements     ${kt-widget4__text}
+    FOR    ${nombreDeContenedor}   IN      @{nombresDeContenedores}
+       #Wait Until Element Is Visible    ${nombreDeContenedor}   ${LARGE_RETRY_COUNT}
+       ${copiaNombreDeContenedor}   Get Text   ${nombreDeContenedor}
+       Log        El texto copiado es: ${copiaNombreDeContenedor}    console=yes
+    END
 #Verificar que se peuda entrar a una llamada OK
 #    Enter The Call
 
