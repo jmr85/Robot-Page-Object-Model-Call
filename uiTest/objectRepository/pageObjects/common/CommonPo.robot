@@ -149,6 +149,17 @@ Set Text [Arguments] ${textBoxLocator} ${text} ${retryScale}
     Wait Until Keyword Succeeds    ${retryScale}     ${RETRY_DELAY}    Wait Until Element Is Enabled    ${textBoxLocator}
     Wait Until Keyword Succeeds    ${retryScale}     ${RETRY_DELAY}    Input Text    ${textBoxLocator}    ${text}
 
+Get Random Item [Arguments] ${items} ${retryScale}
+    [Documentation]    
+    ...  24-09-20 Cuenta los items que tiene el Dropdow y luego selecciona uno al azar  ...
+
+    Wait Until Page Contains Element    ${items}
+    Page Should Contain Element         ${items}        limit=none
+    ${countItemsCustomers}=     Get Element Count   ${items}
+    Log         ${countItemsCustomers} 
+    ${random}   Set Variable    0
+    ${random}=  Evaluate    random.randint(1, ${countItemsCustomers}) 
+    Return from keyword     ${random}
 
 Select From Dropdown [Arguments] ${dropdownLocator} ${text} ${retryScale}
     [Documentation]        
@@ -157,7 +168,16 @@ Select From Dropdown [Arguments] ${dropdownLocator} ${text} ${retryScale}
     Click Element [Arguments] ${dropdownLocator} ${retryScale}
     ${optionLocator}    Get Option Locator By Name From Dropdown [Arguments] ${text}
     Click Element [Arguments] ${optionLocator} ${retryScale}
-    
+
+Select From Dropdown Random [Arguments] ${dropdownLocator} ${retryScale}
+    [Documentation]        
+	...  24-09-20 Select an option value from a dropdown  ...
+
+    Click Element [Arguments] ${dropdownLocator} ${retryScale}
+    Sleep   3s
+    ${item}    Get Random Item [Arguments] ${itemsCustomers} ${retryScale}
+    ${optionLocator}    Get Option Locator By Name From Dropdown [Arguments] ${item}
+    Click Element [Arguments] ${optionLocator} ${retryScale}    
     
 Click The Radio Button [Arguments] ${radioButtonLabelVal} ${retryScale}
     [Documentation]        
