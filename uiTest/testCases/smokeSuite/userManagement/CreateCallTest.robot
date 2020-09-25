@@ -49,7 +49,7 @@ Verificar el codigo de llamada creada
     Log        El texto copiado es: ${ValorCodeCall}    console=yes
 
 Verificar textos de cada Item llamada agendada
-    Sleep    3s
+    Sleep    3s     #Si se deja menos de tres segundos solo me itera los primeros elementos
     Wait Until Element Is Visible   ${kt-widget4__text}
     @{nombresDeContenedores}    Get WebElements     ${kt-widget4__text}
     FOR    ${nombreDeContenedor}   IN      @{nombresDeContenedores}
