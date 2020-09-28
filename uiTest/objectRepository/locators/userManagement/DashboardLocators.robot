@@ -12,6 +12,8 @@ ${callCreatedSuccessfully}                     xpath=//div[@id='kt_content']/div
 #lista de <p class="kt-widget4__text">
 #en consola chrome se puede verificar este elemento con este comando $x("") en el parametro va el xpath
 ${kt-widget4__text}         xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div/div[1]/div[2]/p
+# Listado de botones Enter Call $x("/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div/div/button")
+${enterTheCallList}         xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div/div/button
 # Boton entrar a la llamada
 ${enterTheCall}         xpath=//*[@id="btnAgendaEnterCall"]
 # iconos de status de llamadas

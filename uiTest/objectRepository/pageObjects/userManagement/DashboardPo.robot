@@ -10,7 +10,7 @@ Library     SeleniumLibrary
 Create Call
     Click Element [Arguments] ${btnNewVisitOpenPopUp} ${SMALL_RETRY_COUNT}
     Sleep   1s
-    Click Element [Arguments] ${datePickerLocator} ${SMALL_RETRY_COUNT}
+    #Click Element [Arguments] ${datePickerLocator} ${SMALL_RETRY_COUNT}
     #Click Element [Arguments] ${clientSelect} ${SMALL_RETRY_COUNT}
     Sleep   1s
     #${item}    Get Random Item [Arguments] ${itemsCustomers} ${SMALL_RETRY_COUNT}
