@@ -47,17 +47,30 @@ Verificar que se haya creado creado la llamada exitosamente
     ${ValorCodeCall}   Get Text   ${callCreatedSuccessfully}
     Log        El texto copiado es: ${ValorCodeCall}    console=yes
 
-    Sleep    3s
+    Sleep    2s
     Wait Until Element Is Visible   ${kt-widget4__text}
-    @{nombresDeContenedores}    Get WebElements     ${kt-widget4__text}
+    @{nombresDeContenedores}    Get WebElements     ${kt-widget4__item}
     FOR    ${nombreDeContenedor}   IN      @{nombresDeContenedores}
-       #Wait Until Element Is Visible    ${nombreDeContenedor}   ${LARGE_RETRY_COUNT}
+       Wait Until Element Is Visible    ${nombreDeContenedor}   ${LARGE_RETRY_COUNT}
        ${copiaNombreDeContenedor}   Get Text   ${nombreDeContenedor}
+       Log To Console   ${nombreDeContenedor}
+       #${nombreDeContenedor}    Catenate    //*[@id="btnAgendaEnterCall"]
+       Page Should Contain Element  ${enterTheCall}     #//*[@id="btnAgendaEnterCall"]   
        Log        El texto copiado es: ${copiaNombreDeContenedor}    console=yes
        Log        Valor code call: ${ValorCodeCall}     console=yes
-       Run Keyword If	'${copiaNombreDeContenedor}' == '${ValorCodeCall}'	Exit For Loop
+       #Run Keyword If	'${copiaNombreDeContenedor}' == '${ValorCodeCall}'	Exit For Loop
+       Click Element    ${enterTheCall}
+       Sleep    1s
     END
-    Enter The Call
+    Sleep   0.5s
+    Set Focus To Element    ${nombreDeContenedor}
+    Log        Focus: ${nombreDeContenedor}     console=yes
+    Sleep   1s
+    Set Focus To Element    ${enterTheCall}
+    ${boton}    Get Button Locator Agendar [Arguments] 3
+    Click Element   ${boton}
+    #Enter The Call
+
     
 # Verificar textos de cada Item llamada agendada
 #     Sleep    3s     #Si se deja menos de tres segundos solo me itera los primeros elementos
