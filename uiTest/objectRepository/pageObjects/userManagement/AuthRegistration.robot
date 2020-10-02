@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../../locators/userManagement/LoginPageLocators.robot
+Resource    ../../locators/userManagement/AuthRegistrationLocators.robot
 Resource    ../common/CommonPo.robot
    
 Library     SeleniumLibrary

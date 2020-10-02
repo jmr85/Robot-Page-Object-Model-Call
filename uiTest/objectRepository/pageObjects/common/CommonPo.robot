@@ -3,7 +3,7 @@ Resource   ../../../configs/EnvDetails.robot
 Resource   ../../../configs/BrowserDetails.robot
 Resource   ../../../configs/SeleniumConfigs.robot
 Resource   ../../../configs/ApplicationVariables.robot
-Resource   ../../locators/userManagement/LoginPageLocators.robot
+Resource   ../../locators/userManagement/AuthRegistrationLocators.robot
 Resource   ../../locators/common/CommonLocators.robot
 
 Library    SeleniumLibrary

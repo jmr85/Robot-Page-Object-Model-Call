@@ -1,5 +1,5 @@
 *** Setting ***
-Resource   ../../../objectRepository/pageObjects/userManagement/LoginPo.robot
+Resource   ../../../objectRepository/pageObjects/userManagement/AuthRegistration.robot
 Resource   ../../../objectRepository/pageObjects/common/CommonPo.robot
 
 Library    SeleniumLibrary

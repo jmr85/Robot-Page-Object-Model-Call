@@ -1,12 +1,11 @@
 *** Setting ***
-Resource   ../../objectRepository/pageObjects/userManagement/LoginPo.robot
+Resource   ../../objectRepository/pageObjects/userManagement/AuthRegistration.robot
 Resource   ../../objectRepository/pageObjects/userManagement/DashboardPo.robot
 Resource   ../../objectRepository/pageObjects/userManagement/CallPo.robot
 Resource   ../../objectRepository/pageObjects/common/CommonPo.robot
 
 
 Library    SeleniumLibrary
-Library    FakerLibrary
 
 Documentation    
 ...		Esta suite testea los iconos de status de llamada  ...
