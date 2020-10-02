@@ -12,8 +12,8 @@ Documentation
 ...		Esta suite testea los iconos de status de llamada  ...
 
 
-Suite Setup     Open Browser To Login Page
-Suite Teardown  Close Browser
+Suite Setup     Open Browser To Login Page  # se ejecutara antes del inicio de la suite de pruebas o la ejecucion del caso de prueba
+Suite Teardown  Close Browser   #se ejecutara después del inicio de la ejecución del conjunto de pruebas o del caso de prueba
 
 *** Keywords ***
 Set Selenium Speed  1s
@@ -25,7 +25,7 @@ ${ValorCodeCall}        0
 
 *** Test Cases ***
 Verify that a valid user can login to the system
-    [Tags]      PruebaExploratoria  Caso001
+    [Tags]      login user
     [Documentation]
 	...  This testcase verified a valid login scenario  ...
     
