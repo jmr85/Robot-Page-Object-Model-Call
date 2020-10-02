@@ -21,7 +21,7 @@ Create Call
     Click Element [Arguments] ${btnNewVisitCreate} ${SMALL_RETRY_COUNT} 
 
 Enter The Call
-    Click Element [Arguments] ${enterTheCall} ${SMALL_RETRY_COUNT}
+    Click Element [Arguments] ${btnAgendaEnterCallLast} ${SMALL_RETRY_COUNT}
 
 
 
