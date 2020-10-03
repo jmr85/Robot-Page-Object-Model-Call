@@ -24,10 +24,11 @@ Cancel Call Close
     Click Element [Arguments] ${btnCancelCallClose} ${SMALL_RETRY_COUNT}
 
 Write Note Random
+    [Arguments]    ${max_chars}
     [Documentation]        
-	...  Escribe texto en un text area  ...
+	...  Escribe texto random en el text area de note antes de finalizar la llamada ...
 
-    ${text}=    FakerLibrary.Text  255
+    ${text}=    FakerLibrary.Text  ${max_chars}
     Set Text [Arguments] ${note} ${text} ${SMALL_RETRY_COUNT}    
       
 Cancel Call End And Click Bee Receptor

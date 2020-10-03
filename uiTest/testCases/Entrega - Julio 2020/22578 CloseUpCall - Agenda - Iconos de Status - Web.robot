@@ -15,7 +15,7 @@ Suite Setup     Open Browser To Login Page  # se ejecutara antes del inicio de l
 Suite Teardown  Close Browser   #se ejecutara después del inicio de la ejecución del conjunto de pruebas o del caso de prueba
 
 *** Keywords ***
-Set Selenium Speed  1s
+Set Selenium Speed      10s
 
 *** Variables ***
 ${validUserNameVal}     ${USERNAME}
@@ -71,7 +71,7 @@ Verify that a valid user can login to the system
     Sleep   3s
     Video Cancel Call Popup
     Sleep   1s
-    Write Note Random
+    Write Note Random           120
     Sleep   1s
     Cancel Call End And Click Bee Receptor
     Sleep   1s
