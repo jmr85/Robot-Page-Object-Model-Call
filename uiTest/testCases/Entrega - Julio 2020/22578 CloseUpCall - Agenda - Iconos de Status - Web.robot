@@ -38,8 +38,8 @@ Verify that a valid user can login to the system
     
     Create Call
     Sleep   2s
-    Wait Until Element Is Visible   ${callCreatedSuccessfully}      #verifica que aparezca el popup de que se creo exitosamente
-    ${ValorCodeCall}   Get Text   ${callCreatedSuccessfully}
+    Wait Until Element Is Visible   ${callScheduledCorrectly}      #verifica que aparezca el popup de que se creo exitosamente
+    ${ValorCodeCall}   Get Text   ${callScheduledCorrectly}
     Log        Code Call generado es: ${ValorCodeCall}    console=yes
     
     Wait Until Element Is Visible   ${iconCallNotInitiatedLast}     #se ubica en el ultimo item agendado y verifica el icono de llamada NO iniciada

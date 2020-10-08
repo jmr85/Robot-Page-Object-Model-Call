@@ -33,9 +33,9 @@ Verificar que haga click al boton especifico
     
     Create Call
     Sleep   3s
-    #Element Should Be Visible       ${callCreatedSuccessfully}     ${SMALL_RETRY_COUNT}
-    Wait Until Element Is Visible   ${callCreatedSuccessfully}
-    ${ValorCodeCall}   Get Text   ${callCreatedSuccessfully}
+    #Element Should Be Visible       ${callScheduledCorrectly}     ${SMALL_RETRY_COUNT}
+    Wait Until Element Is Visible   ${callScheduledCorrectly}
+    ${ValorCodeCall}   Get Text   ${callScheduledCorrectly}
     Log        Code Call copiado es: ${ValorCodeCall}    console=yes
     #Wait Until Element Is Visible   ${enterTheCall}
     #Element Should Be Focused   ${enterTheCall}

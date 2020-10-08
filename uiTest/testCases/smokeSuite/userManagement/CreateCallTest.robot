@@ -42,9 +42,9 @@ Verificar que se haya creado creado la llamada exitosamente
     [Tags]          Funcional
     Create Call
     Sleep   3s
-    #Element Should Be Visible       ${callCreatedSuccessfully}     ${SMALL_RETRY_COUNT}
-    Wait Until Element Is Visible   ${callCreatedSuccessfully}
-    ${ValorCodeCall}   Get Text   ${callCreatedSuccessfully}
+    #Element Should Be Visible       ${callScheduledCorrectly}     ${SMALL_RETRY_COUNT}
+    Wait Until Element Is Visible   ${callScheduledCorrectly}
+    ${ValorCodeCall}   Get Text   ${callScheduledCorrectly}
     Log        El texto copiado es: ${ValorCodeCall}    console=yes
 
     Sleep    2s
