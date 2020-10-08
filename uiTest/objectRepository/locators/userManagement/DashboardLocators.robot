@@ -33,13 +33,13 @@ ${btnAgendaEnterCallLast}         xpath=/html/body/div[1]/div[4]/div/div/div/div
 # Boton entrar a la llamada
 ${enterTheCall}         xpath=//*[@id="btnAgendaEnterCall"]
 # iconos de status de llamadas
-${iconCallNotInitiated}     xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div/div[1]/div[1]/*[name()="svg"]/*[name()="path"][starts-with(@d, "M3 5v14c0")]
-${iconCallInitiated}    xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div/div[1]/div[1]/*[name()="svg"]/*[name()="path"][starts-with(@d, "M13.05 9.79L10")]
-${iconCallClosed}  xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div/div[1]/div[1]/*[name()="svg"]/*[name()="path"][starts-with(@d, "M12 2C6.48")]
+${iconCallNotInitiated}     xpath=//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M3 5v14c0")]
+${iconCallInitiated}    xpath=//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M13.05 9.79L10")]
+${iconCallClosed}  xpath=//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M12 2C6.47")]
 # iconos de status de llamadas (LAST)
-${iconCallNotInitiatedLast}     xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div[last()]/div[1]/div[1]/*[name()="svg"]/*[name()="path"][starts-with(@d, "M3 5v14c0")]
-${iconCallInitiatedLast}    xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div[last()]/div[1]/div[1]/*[name()="svg"]/*[name()="path"][starts-with(@d, "M13.05 9.79L10")]
-${iconCallClosedLast}   xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div[last()]/div[1]/div[1]/*[name()="svg"]/*[name()="path"][starts-with(@d, "M12 2C6.47")]
+${iconCallNotInitiatedLast}     xpath=(//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M3 5v14c0")])[last()]
+${iconCallInitiatedLast}    xpath=(//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M13.05 9.79L10")])[last()]
+${iconCallClosedLast}   xpath=(//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M12 2C6.47")])[last()]
 
 
 *** Keywords ***
