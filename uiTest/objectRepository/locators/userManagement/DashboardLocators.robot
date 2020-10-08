@@ -38,8 +38,8 @@ ${iconCallInitiated}    xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/di
 ${iconCallClosed}  xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div/div[1]/div[1]/*[name()="svg"]/*[name()="path"][starts-with(@d, "M12 2C6.48")]
 # iconos de status de llamadas (LAST)
 ${iconCallNotInitiatedLast}     xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div[last()]/div[1]/div[1]/*[name()="svg"]/*[name()="path"][starts-with(@d, "M3 5v14c0")]
-${iconCallInitiatedLast}        xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div[last()]/div[1]/div[1]/*[name()="svg"]/*[name()="path"][starts-with(@d, "M13.05 9.79L10")]
-${iconCallClosedLast}           xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div[last()]/div[1]/div[1]/*[name()="svg"]/*[name()="path"][starts-with(@d, "M12 2C6.48")]
+${iconCallInitiatedLast}    xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div[last()]/div[1]/div[1]/*[name()="svg"]/*[name()="path"][starts-with(@d, "M13.05 9.79L10")]
+${iconCallClosedLast}   xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div[last()]/div[1]/div[1]/*[name()="svg"]/*[name()="path"][starts-with(@d, "M12 2C6.47")]
 
 
 *** Keywords ***

@@ -15,7 +15,7 @@ Suite Setup     Open Browser To Login Page  # se ejecutara antes del inicio de l
 Suite Teardown  Close Browser   #se ejecutara después del inicio de la ejecución del conjunto de pruebas o del caso de prueba
 
 *** Keywords ***
-Set Selenium Speed      10s
+Set Selenium Speed      5s
 
 *** Variables ***
 ${validUserNameVal}     ${USERNAME}
