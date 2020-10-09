@@ -1,13 +1,9 @@
+[Documentation]
+...  Aca estan los Locators de /dashboard  ...
+
 *** Variables ***
-# Aca estan los Locators de /dashboard
-
-# Ejemplo para verificar por consola de chrome 
-# Listado de botones Enter Call con el comando $x("aca se le pasa el xpath")
-# $x("/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div/div/button")
-
-# Otra manera mas facil de verificar en chrome es despues de abrir la consola y 
-# estando en la pestaña de Elements Crl+F y poner el xpath en la caja
-# de busqueda
+# una manera de verificar los locators en chrome es despues de abrir la consola y 
+# estando en la pestaña de Elements Crl+F y poner el xpath en la caja de busqueda
 
 # Boton Agendar
 ${btnNewVisitOpenPopUp}          //*[@id="btnNewVisitOpenPopUp"]
@@ -43,9 +39,10 @@ ${iconCallClosedLast}   xpath=(//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLa
 
 
 *** Keywords ***
-# Get Button Locator Agendar [Arguments] ${item}
-#     [Documentation]    
-#     ...  Obtiene un boton para entrar a la llamada especifico  ...
+Get ButtonAgendaEnterCall By Call Code
+    [Arguments]    ${call_code}
+    [Documentation]    
+    ...  Obtiene un boton para entrar a la llamada especifico por codigo de llamada  ...
                                                                               
-#     ${itemLocator}   Set Variable   xpath=/html/body/div[1]/div[4]/div/div/div/div/div[2]/div[3]/div/div[${item}]/div/button  
-#     Return from keyword    ${itemLocator} 
+    ${buttonLocator}   Set Variable   xpath=//*[@class='kt-widget4__text '][text()[contains(.,'${call_code}')]]/ancestor::div[@class='kt-widget4__info ']/following-sibling::button[@id='btnAgendaEnterCall']  
+    Return from keyword    ${buttonLocator} 

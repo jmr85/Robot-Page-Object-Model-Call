@@ -21,7 +21,11 @@ Create Call
     Click Element [Arguments] ${btnNewVisitCreate} ${SMALL_RETRY_COUNT} 
 
 Enter The Call
-    Click Element [Arguments] ${btnAgendaEnterCallLast} ${SMALL_RETRY_COUNT}
+    [Arguments]    ${call_code}
+    [Documentation]        
+	...  Va hacer click sobre el boton id=btnAgendaEnterCall con un cod call especifico...
+    ${button}   Get ButtonAgendaEnterCall By Call Code  ${call_code}
+    Click Element [Arguments] ${button} ${SMALL_RETRY_COUNT}
 
 
 

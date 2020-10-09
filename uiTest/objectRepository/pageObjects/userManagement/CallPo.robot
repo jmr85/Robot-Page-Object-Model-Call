@@ -30,10 +30,16 @@ Write Note Random
 
     ${text}=    FakerLibrary.Text  ${max_chars}
     Set Text [Arguments] ${note} ${text} ${SMALL_RETRY_COUNT}    
+
+Cancel Call End
+    [Documentation]
+	...  Cierra la llamada con el boton SI  ...
+
+    Click Element [Arguments] ${btnCancelCallEnd} ${SMALL_RETRY_COUNT}
       
 Cancel Call End And Click Bee Receptor
     [Documentation]
-	...  Sale y cierra la llamada  ...
+	...  Cierra la llamada y selecciona Bee Receptor ...
 
     Click Element [Arguments] ${btnCancelCallEnd} ${SMALL_RETRY_COUNT}  
     Wait Until Element Is Visible   ${beeReceptor}

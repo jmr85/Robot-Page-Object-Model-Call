@@ -1,6 +1,7 @@
 *** Setting ***
 Resource   ../../objectRepository/pageObjects/userManagement/AuthRegistration.robot
 Resource   ../../objectRepository/pageObjects/userManagement/DashboardPo.robot
+Resource   ../../objectRepository/locators/userManagement/DashboardLocators.robot
 Resource   ../../objectRepository/pageObjects/userManagement/CallPo.robot
 Resource   ../../objectRepository/pageObjects/common/CommonPo.robot
 
@@ -15,12 +16,11 @@ Suite Setup     Open Browser To Login Page  # se ejecutara antes del inicio de l
 Suite Teardown  Close Browser   #se ejecutara después del inicio de la ejecución del conjunto de pruebas o del caso de prueba
 
 *** Keywords ***
-Set Selenium Speed      5s
+#Set Selenium Speed      2s
 
 *** Variables ***
 ${validUserNameVal}     ${USERNAME}
 ${validPasswordVal}     ${PASSWORD}
-${ValorCodeCall}        0
 
 *** Test Cases ***
 Verify that a valid user can login to the system
@@ -39,9 +39,9 @@ Verify that a valid user can login to the system
     Create Call
     Sleep   2s
     Wait Until Element Is Visible   ${callScheduledCorrectly}      #verifica que aparezca el popup de que se creo exitosamente
-    ${ValorCodeCall}   Get Text   ${callScheduledCorrectly}
+    ${ValorCodeCall}        Get Text   ${callScheduledCorrectly}
+    Set Global Variable      ${ValorCodeCall} 
     Log        Code Call generado es: ${ValorCodeCall}    console=yes
-    
     Wait Until Element Is Visible   ${iconCallNotInitiatedLast}     #se ubica en el ultimo item agendado y verifica el icono de llamada NO iniciada
     Capture Element Screenshot  ${iconCallNotInitiatedLast}
 
@@ -50,7 +50,7 @@ Verify that a valid user can login to the system
 	...  Verifica que se visualice icono estatus de llamada iniciada  ...
     [Tags]          22811
     
-    Click Element [Arguments] ${btnAgendaEnterCallLast} ${SMALL_RETRY_COUNT}   #se ubica en el ultimo item agendado y entra a la llamada
+    Enter The Call  ${ValorCodeCall}
     Call Start
     Sleep   3s
     Video Cancel Call Popup
@@ -66,14 +66,14 @@ Verify that a valid user can login to the system
 	...  Verificar el icono de status despues de cerrar la llamada  ...
     [Tags]          22812
     
-    Click Element [Arguments] ${btnAgendaEnterCallLast} ${SMALL_RETRY_COUNT}   #se ubica en el ultimo item agendado y entra a la llamada
+    Enter The Call  ${ValorCodeCall}
     Call Start
     Sleep   3s
     Video Cancel Call Popup
     Sleep   1s
     Write Note Random           120
     Sleep   1s
-    Cancel Call End And Click Bee Receptor
+    Cancel Call End     #cancela y cierra la llamada
     Sleep   1s
     Wait Until Element Is Visible   ${iconCallClosedLast}    #se ubica en el ultimo item agendado y verifica el icono de llamada cerrada
     Capture Element Screenshot  ${iconCallClosedLast}
