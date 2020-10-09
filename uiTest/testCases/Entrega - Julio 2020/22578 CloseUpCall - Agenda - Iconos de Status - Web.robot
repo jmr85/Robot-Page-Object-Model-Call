@@ -42,7 +42,8 @@ Verify that a valid user can login to the system
     ${ValorCodeCall}        Get Text   ${callScheduledCorrectly}
     Set Global Variable      ${ValorCodeCall} 
     Log        Code Call generado es: ${ValorCodeCall}    console=yes
-    Wait Until Element Is Visible   ${iconCallNotInitiatedLast}     #se ubica en el ultimo item agendado y verifica el icono de llamada NO iniciada
+    ${iconCallStatus}         Get Icon Status By Call Code And Locator       ${ValorCodeCall}        ${iconCallNotInitiated}
+    Wait Until Element Is Visible   ${iconCallStatus}
     Capture Element Screenshot  ${iconCallNotInitiatedLast}
 
 22811 Verify initiated call status icon 
@@ -57,7 +58,8 @@ Verify that a valid user can login to the system
     Sleep   0.5s
     Cancel Call Close
     Sleep   1s
-    Wait Until Element Is Visible   ${iconCallInitiatedLast}    #se ubica en el ultimo item agendado y verifica el icono de llamada iniciada
+    ${iconCallStatus}         Get Icon Status By Call Code And Locator       ${ValorCodeCall}        ${iconCallInitiated}
+    Wait Until Element Is Visible   ${iconCallStatus}
     Capture Element Screenshot  ${iconCallInitiatedLast}
 
 
@@ -75,5 +77,6 @@ Verify that a valid user can login to the system
     Sleep   1s
     Cancel Call End     #cancela y cierra la llamada
     Sleep   1s
-    Wait Until Element Is Visible   ${iconCallClosedLast}    #se ubica en el ultimo item agendado y verifica el icono de llamada cerrada
+    ${iconCallStatus}         Get Icon Status By Call Code And Locator       ${ValorCodeCall}        ${iconCallClosed}
+    Wait Until Element Is Visible   ${iconCallStatus}
     Capture Element Screenshot  ${iconCallClosedLast}

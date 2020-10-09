@@ -29,10 +29,10 @@ ${btnAgendaEnterCallLast}         xpath=(//*[@id="btnAgendaEnterCall"])[last()]
 # Boton entrar a la llamada
 ${enterTheCall}         xpath=//*[@id="btnAgendaEnterCall"]
 # iconos de status de llamadas
-${iconCallNotInitiated}     xpath=//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M3 5v14c0")]
-${iconCallInitiated}    xpath=//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M13.05 9.79L10")]
-${iconCallClosed}  xpath=//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M12 2C6.47")]
-# iconos de status de llamadas (LAST)
+${iconCallNotInitiated}     //*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M3 5v14c0")]
+${iconCallInitiated}    //*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M13.05 9.79L10")]
+${iconCallClosed}  //*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M12 2C6.47")]
+# iconos de status de llamadas obtiene el ultimo item de la lista de llamadas agendadas
 ${iconCallNotInitiatedLast}     xpath=(//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M3 5v14c0")])[last()]
 ${iconCallInitiatedLast}    xpath=(//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M13.05 9.79L10")])[last()]
 ${iconCallClosedLast}   xpath=(//*[@class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge']/*[name()="path"][starts-with(@d, "M12 2C6.47")])[last()]
@@ -46,3 +46,13 @@ Get ButtonAgendaEnterCall By Call Code
                                                                               
     ${buttonLocator}   Set Variable   xpath=//*[@class='kt-widget4__text '][text()[contains(.,'${call_code}')]]/ancestor::div[@class='kt-widget4__info ']/following-sibling::button[@id='btnAgendaEnterCall']  
     Return from keyword    ${buttonLocator} 
+
+Get Icon Status By Call Code And Locator
+    [Arguments]    ${call_code}     ${locator}
+    [Documentation]    
+    ...  Recibe parametros call code y el xpath del icon status  ...
+                                                                              
+    ${iconStatus}   Set Variable   xpath=//*[@class='kt-widget4__text '][text()[contains(.,'${call_code}')]]/ancestor::div[@class='kt-widget4__info ']/preceding-sibling::div[@class='kt-widget4__pic kt-widget4__pic--pic ']${locator}
+    Return from keyword    ${iconStatus} 
+
+
