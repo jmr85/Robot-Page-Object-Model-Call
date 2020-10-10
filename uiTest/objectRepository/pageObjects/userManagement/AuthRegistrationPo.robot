@@ -23,12 +23,12 @@ Login To The Application [Arguments] ${userNameVal} ${passwordVal}
     #User Is In The My Account Page
     
     
-Open Browser And Login To The Application
-    [Documentation]
-	...  Open browser and login using valid username and password  ...
+# Open Browser And Login To The Application
+#     [Documentation]
+# 	...  Open browser and login using valid username and password  ...
 
-    Open Browser To Login Page
-    Submit Login Information [Arguments] ${USERNAME} ${PASSWORD}
+#     Open Browser To Registration Page
+#     Submit Login Information [Arguments] ${USERNAME} ${PASSWORD}
     
     
 User Is In The Login Page

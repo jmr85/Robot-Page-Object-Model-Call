@@ -1,5 +1,5 @@
 *** Setting ***
-Resource   ../../objectRepository/pageObjects/userManagement/AuthRegistration.robot
+Resource   ../../objectRepository/pageObjects/userManagement/AuthRegistrationPo.robot
 Resource   ../../objectRepository/pageObjects/userManagement/DashboardPo.robot
 Resource   ../../objectRepository/locators/userManagement/DashboardLocators.robot
 Resource   ../../objectRepository/pageObjects/userManagement/CallPo.robot
@@ -12,7 +12,7 @@ Documentation
 ...		Esta suite testea los iconos de status de llamada  ...
 
 
-Suite Setup     Open Browser To Login Page  # se ejecutara antes del inicio de la suite de pruebas o la ejecucion del caso de prueba
+Suite Setup     Open Browser To Registration Page  # se ejecutara antes del inicio de la suite de pruebas o la ejecucion del caso de prueba
 Suite Teardown  Close Browser   #se ejecutara después del inicio de la ejecución del conjunto de pruebas o del caso de prueba
 
 *** Keywords ***

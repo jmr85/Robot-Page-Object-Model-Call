@@ -12,11 +12,25 @@ Library    OperatingSystem
 
 
 *** Keywords ***
+Open Browser To Registration Page
+    [Documentation]
+	...  Open the browser and navigates to the /auth/registration page  ...
+	
+    #Open Browser      ${REGISTRATION URL}   ${BROWSER}
+    Run Keyword If    '${BROWSER}' == 'chrome'  Open Browser      ${REGISTRATION URL}   ${BROWSER}     	options=add_argument("--use-fake-device-for-media-stream"); add_argument("--use-fake-ui-for-media-stream")                          
+    ...    ELSE         Open Browser      ${REGISTRATION URL}   ${BROWSER}     	ff_profile_dir=set_preference("permissions.default.microphone", 1); set_preference("permissions.default.camera", 1)            
+    
+    #Set Window Size	    ${WINDOW_WIDTH}     ${WINDOW_HEIGHT} reemplace por Maximize Browser Window
+    Maximize Browser Window
+    Set Selenium Timeout     ${SELENIUM_TIMEOUT}
+    Element Should Be Visible [Arguments] ${loginPageLogo} ${SMALL_RETRY_COUNT}
+    Set Log Level    DEBUG     
+
 Open Browser To Login Page
     [Documentation]
-	...  Open the browser and navigates to the login page  ...
+	...  Open the browser and navigates to the /auth/login page  ...
 	
-    #Open Browser      ${LOGIN URL}   ${BROWSER}
+    #Open Browser      ${REGISTRATION URL}   ${BROWSER}
     Run Keyword If    '${BROWSER}' == 'chrome'  Open Browser      ${LOGIN URL}   ${BROWSER}     	options=add_argument("--use-fake-device-for-media-stream"); add_argument("--use-fake-ui-for-media-stream")                          
     ...    ELSE         Open Browser      ${LOGIN URL}   ${BROWSER}     	ff_profile_dir=set_preference("permissions.default.microphone", 1); set_preference("permissions.default.camera", 1)            
     
@@ -25,7 +39,6 @@ Open Browser To Login Page
     Set Selenium Timeout     ${SELENIUM_TIMEOUT}
     Element Should Be Visible [Arguments] ${loginPageLogo} ${SMALL_RETRY_COUNT}
     Set Log Level    DEBUG     
-
 
 Logout From The System
     [Documentation]

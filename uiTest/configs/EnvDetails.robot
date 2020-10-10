@@ -6,6 +6,7 @@ ${DEV_ENV}             closeupcalldev.azureedge.net
 #${PROD_ENV}            
 #${ENV}                 ${QA_ENV}
 
-${LOGIN URL}      https://${DEV_ENV}/auth/registration
+${REGISTRATION URL}      https://${DEV_ENV}/auth/registration
+${LOGIN URL}      https://${DEV_ENV}/auth/login
 ${DASHBOARD URL}    https://${DEV_ENV}/dashboard
 ${ERROR URL}      https://${DEV_ENV}/auth/registration
