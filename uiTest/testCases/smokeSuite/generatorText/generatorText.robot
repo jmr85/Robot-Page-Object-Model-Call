@@ -7,7 +7,7 @@ Documentation
 ...		Esta suite testea textos generados automaticamente  ...
 
 
-*** Test Cases ***
+*** Tasks ***
 probar generate string
     ${randomString}     Generate Random String  12  [LOWER]
     Log        El string generado es: ${randomString}    console=yes
